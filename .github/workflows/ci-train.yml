@@ -27,7 +27,7 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install mlflow==2.19.0 pandas scikit-learn
+          pip install mlflow==2.19.0 pandas scikit-learn dagshub
 
       # Run MLflow Project & capture RUN_ID
       - name: Train model with MLflow Project
