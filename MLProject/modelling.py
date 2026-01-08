@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
@@ -7,11 +8,15 @@ import dagshub
 
 
 # INIT DAGSHUB + MLFLOW
-dagshub.init(
-    repo_owner="erwinhafizzxr",
-    repo_name="titanic-mlflow-erwin-hafiz-triadi",
-    mlflow=True
-)
+
+
+if os.getenv("CI") != "true":
+    dagshub.init(
+        repo_owner="erwinhafizzxr",
+        repo_name="titanic-mlflow-erwin-hafiz-triadi",
+        mlflow=True
+    )
+
 
 
 # LOAD DATA
